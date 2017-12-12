@@ -1,0 +1,25 @@
+.center-vertical {
+  display: flex;
+  align-items: flex-end;
+}
+
+.center {
+  text-align: center;
+}
+
+.margin {
+  margin-top: 50px;
+}
+
+.with-scroll {
+  max-height: 350px;
+  overflow-y: auto;
+}
+
+.red-text{
+  color:rgb(204, 44, 44) !important
+}
+
+.green-text{
+  color:rgb(31, 151, 37) !important
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Speech to Text Demo</title>
+
+  <link rel="shortcut icon" type="image/x-icon" href="./img/favicon.ico"/>
+  <link href="./css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="./css/skeleton.css" rel="stylesheet" type="text/css">
+  <link href="./css/app.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+  <main class="container">
+    <h1>Speech to Text Demo</h1>
+    <div class="row center-vertical">
+      <div class="one-half column">
+        <h4>Language</h4>
+        <div>
+          <label for="langs">Choose Language</label>
+          <select id="langs">
+            <option value="en-GB" selected="selected">English (United Kingdom)</option>
+          </select>
+        </div>
+      </div>
+      <div class="one-half column">
+        <button id="button-start" class="button-primary">Start Listening</button>
+        <button id="button-stop">Stop Listening</button>
+      </div>
+    </div>
+    <div class="center margin">
+      <div class="row">
+        <h5>Talk <span id="icon" class="red-text">⬤</span></h5>
+        <h4>Partials:</h4>
+        <p id="partials">...</p>
+      </div>
+      <div class="row">
+        <h4>Results</h4>
+        <ul>
+          <div id="finals" class="with-scroll"></div>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <script src="./js/stt.js"></script>
+  <script src="./js/scenario.js"></script>
+</body>
+</html>
