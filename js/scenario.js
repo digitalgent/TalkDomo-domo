@@ -33,15 +33,67 @@ function switchLights (speech, data)
   var tm = setTimeout(function(){ setMood("sleep"); }, 2000);
 }
 
+function switchAlarm (speech, data)
+{
+  // TTS
+  speak("Komt in orde.");
 
+  // API
+  apiConnect({action: "alarm"});
 
+  // Mood switch
+  setMood("passive aggresive")
+
+  // Timer
+  var tm = setTimeout(function(){ setMood("sleep"); }, 2000);
+}
+
+function Temp (speech, data)
+{
+  // TTS
+  speak("Het is nu 20 graden.");
+
+  setMood("Happy")
+
+  var tm = setTimeout(function(){ setMood("sleep"); }, 2000);
+
+}
+
+function setName (speech, data)
+{
+
+  apiConnect({action: "getName"});
+
+  Naam = new Naam()
+  speak("Mijn naam is" + Naam.getName());
+
+  // Mood switch
+  setMood("Happy")
+
+  // Timer
+  var tm = setTimeout(function(){ setMood("sleep"); }, 2000);
+}
+
+function test (speech, data)
+{
+  // TTS
+  speak("Ik kan praten");
+
+  // Timer
+  var tm = setTimeout(function(){ setMood("sleep"); }, 2000);
+}
 // ----------------- Script --------------------------
 
 var scripts = {
   "hoe laat is het": {func: respondTime},
   "lichten aan": {func: switchLights},
   "lichten uit": {func: switchLights},
-  "disco": {status: "disco"}
+  "disco": {status: "disco"},
+  "alarm aan": {func: switchAlarm},
+  "alarm uit": {func: switchAlarm},
+  "hoe warm is het": {func: Temp},
+  "wat is jouw naam": {func: setName},
+  "zeg iets": {func: test}
 }
 
 

@@ -19,6 +19,12 @@ function addEventHandler(elem, eventType, handler) {
 }
 
 
+
+// var langs ={
+// "English (United States)": "en-US",
+// "Nederlands": "nl-NL"
+// };
+
 function startSpeechRecognizer(auto){
   // state used to to start and stop the detection
   state = {
@@ -30,6 +36,7 @@ function startSpeechRecognizer(auto){
   //recognizer.continuous = true;
   recognizer.interimResults = true;
   recognizer.maxAlternatives = 1;
+  recognizer.lang = "nl-NL";
 
   // ## recognizer functionality
   recognizer.onstart  = function (){ console.log("started!"); }
@@ -155,7 +162,7 @@ function valuateFinal (event) {
 
   if (event.results[0].isFinal)
   {
-    console.log("final")
+    console.log("final", event.results[0][0]);
 
     score = 0;
     return transcript.toLowerCase();
